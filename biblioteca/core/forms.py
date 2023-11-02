@@ -7,42 +7,57 @@ import re
 # titulo e editora validacao
 def validate_title(value):
     if len(value) < 3:
-        raise ValidationError("Deve ter pelo menos 3 caracteres")
+        raise ValidationError("Editora deve ter pelo menos 3 caracteres")
 
 
 def validate_isbn(value):
     if len(value) < 13:
-        raise ValidationError("Deve ter pelo menos 13 caracteres")
+        raise ValidationError("ISBN deve ter pelo menos 13 caracteres")
 
 
 def validate_autor(value):
     if len(value) < 10:
-        raise ValidationError("Deve ter pelo menos 10 caracteres")
+        raise ValidationError("Autor Deve ter pelo menos 10 caracteres")
 
 
 # Número de Páginas: Validar a string para cadastro entre 1 e 3 caracteres e todos numéricos.
 def validate_numero_paginas(value):
     # /d garante 0a9 numeros
-    if not re.match(r"^\d{1,3}$", value):
-        raise ValidationError("Deve ter entre 1 e 3 numeros e somente numeros")
+    if value < 1 or value > 999:
+        raise ValidationError("Quantidade de paginas deve ser entre 1 e 999")
 
 
 # Ano: : Validar a string para cadastro com exatos 4 caracteres e todos numéricos.
+# def validate_ano(value):
+#     if value < 4:
+#         raise ValidationError("Informe o ano de publicação do livro.")
 def validate_ano(value):
-    if len(value) != 4:
-        raise ValidationError("Deve ter 4 numeros")
+    if len(str(value)) != 4 or not str(value).isdigit():
+        raise ValidationError("O ano deve conter exatamente 4 dígitos numéricos.")
 
 
 class LivroForm(forms.ModelForm):
     class Meta:
         model = LivroModel
-        fields = ["titulo", "editora"]
+        fields = ["titulo", "editora", "isbn", "autor", "numero_paginas", "ano"]
         error_messages = {
             "titulo": {
                 "required": ("Informe o título do livro."),
             },
             "editora": {
                 "required": ("Informe a editora do livro."),
+            },
+            "isbn": {
+                "required": ("Informe o ISBN do livro."),
+            },
+            "autor": {
+                "required": ("Informe o autor do livro."),
+            },
+            "numero_paginas": {
+                "required": ("Informe o número de páginas do livro."),
+            },
+            "ano": {
+                "required": ("Informe o ano de publicação do livro."),
             },
         }
 
@@ -79,6 +94,11 @@ class LivroForm(forms.ModelForm):
         numero_paginas = self.cleaned_data["numero_paginas"]
         validate_numero_paginas(numero_paginas)
         return numero_paginas
+
+    def clean_ano(self):
+        ano = self.cleaned_data["ano"]
+        validate_ano(ano)
+        return ano
 
     def clean(self):
         self.cleaned_data = super().clean()
