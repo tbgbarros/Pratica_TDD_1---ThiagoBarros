@@ -69,34 +69,34 @@ Aqui começa seu desafio. Você deve implementar as seguintes melhorias:
 #### Novos campos
 O cliente deseja armazenar os novos campos referente a livros:
 
-+ Autor
-+ ISBN
-+ Número de Páginas
-+ Ano em que a obra foi escrita
++ [x] Autor
++ [x] ISBN
++ [x] Número de Páginas
++ [x] Ano em que a obra foi escrita
 
 #### Validação dos campos
 
 O cliente deseja validar os campos com as seguintes regras:
 
-+ Título:  Validar a string para cadastro com pelo menos 3 caracteres. Atualmente, espera-se ter pelo menos 10 caracteres.
++ [x] Título:  Validar a string para cadastro com pelo menos 3 caracteres. Atualmente, espera-se ter pelo menos 10 caracteres.
 
-+ Editora: Validar a string para cadastro com pelo menos 3 caracteres.
++ [x] Editora: Validar a string para cadastro com pelo menos 3 caracteres.
 Atualmente, espera-se ter pelo menos 10 caracteres.
 
-+ Autor: Validar a string para cadastro com pelo menos 10 caracteres.
++ [x] Autor: Validar a string para cadastro com pelo menos 10 caracteres.
 
-+ ISBN: Validar a string para cadastro com exatos 13 caracteres e todos numéricos.
++ [x] ISBN: Validar a string para cadastro com exatos 13 caracteres e todos numéricos.
 
-+ Número de Páginas: Validar a string para cadastro entre 1 e 3 caracteres e todos numéricos.
++ [x] Número de Páginas: Validar a string para cadastro entre 1 e 3 caracteres e todos numéricos.
 
-+ Ano: : Validar a string para cadastro com exatos 4 caracteres e todos numéricos. 
++ [x] Ano: : Validar a string para cadastro com exatos 4 caracteres e todos numéricos. 
 
-Além disso, na sprint 1, os campos Título e editora são obrigatórios. Nesta sprint, os novos campos serão obrigatórios também.
+ + [x] Além disso, na sprint 1, os campos Título e editora são obrigatórios. Nesta sprint, os novos campos serão obrigatórios também.
 
 #### Ajustes nos testes
 
-O código fonte passará por atualizações para acomodar estes novos requisitos. Com isso, você deve ajudar os testes existentes e, caso julgue pertinente, criar novos testes.
+ [x] O código fonte passará por atualizações para acomodar estes novos requisitos. Com isso, você deve ajudar os testes existentes e, caso julgue pertinente, criar novos testes.
 
-Você recebeu a sprint 1 com uma cobertura de teste acima de 90%.
+[x] Você recebeu a sprint 1 com uma cobertura de teste acima de 90%.
 
-<img src="img/cobertura_testes.png">
+![image](https://github.com/tbgbarros/Pratica_TDD_1---ThiagoBarros/assets/111811766/33c13144-2734-45c3-a3a9-a3f662d9b4d7)
