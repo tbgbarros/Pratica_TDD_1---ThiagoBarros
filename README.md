@@ -60,7 +60,8 @@ Ao acessar a rota listar (/listar), é possível verificar os livros cadastrados
 
 Todos os testes unitários estão passando, e o sistema funciona como previsto para a primeira sprint.
 
-<img src="img/testes_passando.png">
+![image](https://github.com/tbgbarros/Pratica_TDD_1---ThiagoBarros/assets/111811766/2deb7917-7569-49e9-b816-268a115ae227)
+
 
 ### Requisitos para a Sprint 2
 
